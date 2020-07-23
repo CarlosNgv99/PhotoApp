@@ -1,0 +1,15 @@
+MODULES
+multer -> allows saving images in the server.
+nodemon -> keeps an eye on the requests. Shows them in the terminal.
+morgan -> Nodejs framework.
+moongose -> mongodb
+nodemon -> keeps an eye on file changes
+typescript -> main use
+ts-node -> allows nodejs and typescript compatibility
+rimraf -> allow removing files (Works in many OS)
+uuid -> generates random id (string)
+fs-extra -> allows to manipulate files from system (Used to remove photos files from uploads)
+TYPES // Prevents errors with nodejs
+@types/express
+@types/mongoose
+@types/morgan
