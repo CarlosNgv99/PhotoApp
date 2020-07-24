@@ -13,3 +13,13 @@ TYPES // Prevents errors with nodejs
 @types/express
 @types/mongoose
 @types/morgan
+
+COMMAND
+
+npx tsc --init -> New ts project and generates the tsconfig.json file
+
+SCRIPTS
+
+build: tsc -> Converts ts to js
+clean: rimraf dist -> erase dist folder. Just an extra script.
+start: npm run build && node dist/index -> converts ts to js and runs index.js
