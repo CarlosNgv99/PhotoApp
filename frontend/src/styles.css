@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar {
+    padding: 10px;
+}
+
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer .container-fluid {
+    background: #4E5D6C;
+}
+
+footer .container .row {
+    text-align: center;
+}
+
+.fa {
+    color:white;
+    transition: all 1s;
+}
+
+.fa:hover {
+    color:black;
+}
+
+.media {
+    transition: all 1s;
+}
+
+.media:hover {
+    box-shadow: 5px 10px 8px 10px black;
+}
+
+.nav-text{
+    font-size: 25px;
+    margin-right: 40px;
+    padding-top: 5px;
+}

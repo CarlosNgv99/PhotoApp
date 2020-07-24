@@ -1,5 +1,4 @@
 import {Request, Response} from 'express';
-import multer from 'multer';
 import Photo from '../models/photo';
 import path from 'path';
 import fs from 'fs-extra';

@@ -9,8 +9,8 @@ router.route('/photos')
     .post(multer.single('image'),createPhoto)
     .get(getPhotos);
 
-    router.route('/photos/:id')
-        .get(getPhoto)
-        .delete(deletePhoto)
-        .put(updatePhoto);
+router.route('/photos/:id')
+    .get(getPhoto)
+    .delete(deletePhoto)
+    .put(updatePhoto);
 export default router;
