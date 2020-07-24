@@ -3,6 +3,7 @@ import morgan from 'morgan';
 const app = express();
 import path from 'path';
 import indexRoutes from './routes/index';
+import cors from 'cors';
 
 // Settings
 // Asigns a variable port and its value
@@ -10,6 +11,7 @@ app.set('port', process.env.PORT || 3000); // When deploying de API to a host it
 
 // Middlewares
 app.use(morgan('dev')); // shows petitions on console
+app.use(cors());
 app.use(express.json()); // Allows reading json files
 // routes
 app.use('/api', indexRoutes);

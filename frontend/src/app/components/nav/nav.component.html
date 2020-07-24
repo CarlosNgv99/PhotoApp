@@ -28,21 +28,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form (submit)="onSubmit(title, description)">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Title" required>
+                        <input type="text" class="form-control" placeholder="Title" required #title>
                     </div>
                     <div class="form-group">
-                        <textarea id="description" class="form-control" rows="3" placeholder="Description"
-                            required></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Description"
+                            required #description></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="file" class="">
+                        <input type="file" (change)="onPhoto($event)">
+                        <img [src]="photoSelected" *ngIf="photoSelected" alt="image" class="img-fluid">
                     </div>
+                    <button type="submit" class="btn btn-success btn-block">Upload</button>
+
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success btn-block">Upload</button>
                 <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
             </div>
         </div>

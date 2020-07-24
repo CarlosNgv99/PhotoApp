@@ -1,1 +1,24 @@
-<p>photo-prev works!</p>
+
+<div class="row" *ngIf="!photo">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+</div>
+
+  <div class="card m-auto" style="width: 18rem;">
+    <img src="{{baseUrl + photo.path}}"  class="card-img-top w-100" alt="...">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label class="form-label text-left"><h4>Title</h4></label>
+                <input type="text" class="form-control" value="{{photo.title}}">
+            </div>
+            <div class="form-group">
+                <label class="form-label text-left"><h4>Description</h4></label>
+                <textarea type="text" class="form-control" rows="3" value="{{photo.description}}"></textarea>
+            </div>
+            <button class="btn btn-success btn-block">Update</button>
+            <button class="btn btn-danger btn-block">Delete</button>
+            <button class="btn btn-primary btn-block" (click)="back()">Back</button>
+        </form>    </div>
+  </div>
