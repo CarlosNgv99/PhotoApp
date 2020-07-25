@@ -9,11 +9,13 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use(express.static(__dirname + '../../frontend/dist/frontend'));
+app.use(express.static('frontend/dist/frontend'));
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname+
-    '/dist/frontend/index.html'));});
-    
+    res.sendFile(path.join(
+    'frontend/dist/frontend/index.html'));});
+
+console.log(
+    '/dist/frontend/index.html');
 
 async function main() {
     db_1.startConn();
