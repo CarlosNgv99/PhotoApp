@@ -32,8 +32,6 @@ footer .container .row {
 
 .media {
     transition: all 1s;
-    box-shadow: 5px 10px 8px 10px black;
-
 }
 
 .media:hover {

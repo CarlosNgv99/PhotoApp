@@ -25,11 +25,21 @@ export class PhotoPrevComponent implements OnInit {
     })    
   }
 
-  deletePhoto() {
-    this.photoService.deletePhoto(this.id).subscribe(res => {
+  deletePhoto(id: string): Boolean {
+    this.photoService.deletePhoto(id).subscribe(res => {
       console.log(res);
       this.router.navigate(['photos']);
     }, err => console.log(err));
+    return false;
+  }
+
+  updatePhoto(title: HTMLInputElement, description: HTMLInputElement): Boolean {
+    this.photoService.updatePhoto(this.id, title.value, description.value)
+    .subscribe(res => { 
+      console.log(res)
+      this.router.navigate(['photos'])
+    }, err => console.log(err));
+    return false;
   }
 
   back(){

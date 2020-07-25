@@ -31,8 +31,12 @@ export class PhotoServiceService {
     .pipe(catchError(this.httpService.handleError));
   }
 
-  deletePhoto(id: string): Observable<IPhoto> {
-    return this.http.delete<IPhoto>(baseURL + 'api/photos/' + id);
+  deletePhoto(id: string) {
+    return this.http.delete(baseURL + 'api/photos/' + id);
+  }
+
+  updatePhoto(id: string, title: string, description: string) {
+    return  this.http.put(baseURL + 'api/photos/' + id, {title, description});
   }
 
 }
