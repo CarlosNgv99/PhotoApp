@@ -5,6 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./app"));
 const db_1 = require("./db");
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static(__dirname + '../../frontend/dist/frontend'));
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname+
+    '/dist/frontend/index.html'));});
+    
+
 async function main() {
     db_1.startConn();
     await app_1.default.listen(app_1.default.get('port'));
