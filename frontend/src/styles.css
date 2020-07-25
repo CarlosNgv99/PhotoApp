@@ -9,7 +9,7 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    margin-top: 50px;
+    margin-top: 50;
     
 }
 
@@ -32,6 +32,8 @@ footer .container .row {
 
 .media {
     transition: all 1s;
+    box-shadow: 5px 10px 8px 10px black;
+
 }
 
 .media:hover {

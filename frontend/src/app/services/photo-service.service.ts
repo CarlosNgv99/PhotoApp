@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { baseURL } from '../shared/baseURL';
 import { Observable } from 'rxjs';
 import { IPhoto } from '../interfaces/photo';
-
+import { catchError } from 'rxjs/operators';
+import { ProcessHttpService } from '../services/process-http.service'
 @Injectable({ 
   providedIn: 'root'
 })
 export class PhotoServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private httpService: ProcessHttpService) { }
 
   createPhoto(title: string, description:string, photo: File) {
     const fd = new FormData();
@@ -19,12 +20,19 @@ export class PhotoServiceService {
     return this.http.post(baseURL + 'api/photos', fd);
   }
 
-  getPhotos(){
-    return this.http.get<IPhoto[]>(baseURL + 'api/photos');
+  getPhotos(): Observable<IPhoto[]>{
+    return this.http.get<IPhoto[]>(baseURL + 'api/photos')
+    .pipe(catchError(this.httpService.handleError));
+
   }
 
-  getPhoto(id) {
-    return this.http.get<IPhoto>(baseURL + 'api/photos/' + id);
+  getPhoto(id:string): Observable<IPhoto> {
+    return this.http.get<IPhoto>(baseURL + 'api/photos/' + id)
+    .pipe(catchError(this.httpService.handleError));
+  }
+
+  deletePhoto(id: string): Observable<IPhoto> {
+    return this.http.delete<IPhoto>(baseURL + 'api/photos/' + id);
   }
 
 }

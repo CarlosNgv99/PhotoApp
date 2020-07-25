@@ -25,6 +25,13 @@ export class PhotoPrevComponent implements OnInit {
     })    
   }
 
+  deletePhoto() {
+    this.photoService.deletePhoto(this.id).subscribe(res => {
+      console.log(res);
+      this.router.navigate(['photos']);
+    }, err => console.log(err));
+  }
+
   back(){
     this.router.navigate(['photos'])
   }
