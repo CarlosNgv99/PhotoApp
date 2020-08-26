@@ -7,5 +7,5 @@ Photo storage web app. Simple MEAN stack project, using Typescript for REST API 
 ## Upload modal
 ![Uploading](photo-app-ss/uploading.png)
 
-## Photo view
+## Photo preview
 ![View](photo-app-ss/photo-view.png)
